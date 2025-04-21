@@ -3,7 +3,7 @@
 - [ROS2](#ros2)
   * [install](#install)
   * [launch](#launch)
-- [fastdds(不依赖ROS2)](#fastdds(不依赖ROS2))
+- [fastdds-无需依赖ROS2](#fastdds-无需依赖ROS2)
   * [共享内存传输](#共享内存传输)
   * [Data-sharing传输](#Data-sharing传输)
   * [TCP传输](#TCP传输)
@@ -38,7 +38,7 @@ ros2 launch HikRobot_Camera_ROS2 my_camera_launch.py
 
 
 
-# fastdds(不依赖ROS2)
+# fastdds-无需依赖ROS2
 
 Fast DDS 支持多种数据传输方式，包括共享内存、Data-sharing、TCP/UDP、Zero Copy 等方法。在发布者应用程序中，通过SDK从相机设备获取图像数据，并通过 `DataWriter` 发布。在订阅者应用程序中，使用 `DataReader` 接收图像数据，并进行后续处理。
 
