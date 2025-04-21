@@ -48,8 +48,6 @@ Fast DDS 支持多种数据传输方式，包括共享内存、Data-sharing、TC
 
 ## 共享内存传输
 
-参考：https://fast-dds.docs.eprosima.com/en/v2.14.3/fastdds/transport/shared_memory/shared_memory.html  
-
 ```
 #通过fastdds_monitor监控数据传输的性能指标，参考：https://github.com/eProsima/Fast-DDS-monitor
 
@@ -90,8 +88,6 @@ cd /usr/local/bin && ./fastdds_monitor
 
 ## Data-sharing传输
 
-参考：https://fast-dds.docs.eprosima.com/en/latest/fastdds/transport/datasharing.html#data-sharing-delivery-configuration  
-
 <img src="./assets/image-20240728110521342.png" alt="image-20240728110521342" style="zoom:50%;" />
 
 左上角图：发布者和订阅者之间的延迟时间（显示最近一分钟，单位：us）
@@ -120,8 +116,6 @@ cd /usr/local/bin && ./fastdds_monitor
 
 ## UDP传输
 
-参考：https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html
-
 ![image-20240725162115949](./assets/image-20240725162115949.png)
 
 左上角图：发布者和订阅者之间的延迟时间（显示最近一分钟，单位：us）
@@ -135,16 +129,6 @@ cd /usr/local/bin && ./fastdds_monitor
 
 
 ## Zero Copy传输
-
-参考：https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/zero_copy/zero_copy.html#use-case-zero-copy
-
-零拷贝技术目的：降低冗余数据拷贝、内核态&用户态的切换次数，解放CPU拷贝过程。零拷贝的“零”指的是：不需要将数据从内核态拷贝到用户态了。
-
-零拷贝通信允许在应用程序之间传输数据，而无需在内存中复制数据，从而节省时间和资源。为了实现这一点，它在 DataWriter 和 DataReader 之间使用Data-Sharing delivery数据共享交付，并在应用程序和 Fast DDS 之间使用数据缓冲区借用(data buffer loans)。如下图所示：
-
-<img src="./assets/image-20240729160633926.png" alt="image-20240729160633926" style="zoom:50%;" />
-
-（1）应用程序在 DataWriter  中借用样本的缓冲区，然后直接在此缓冲区上写入样本数据，这样可以避免在发布应用程序和 DataWriter  之间复制数据。（2）应用程序从 DataReader 借出来订阅者端的数据，获取接收到的样本作为引用，这样可以避免将数据从 DataReader 复制到应用程序。本质上就是引用。
 
 ![image-20240729183444674](./assets/image-20240729183444674.png)
 
