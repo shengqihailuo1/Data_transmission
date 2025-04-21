@@ -1,0 +1,28 @@
+@final
+struct hk_image
+{
+    unsigned long index;
+    //string message;  //string 类型，在zero-copy的情况下不适用,见：https://fast-dds.docs.eprosima.com/en/v2.14.3/fastdds/use_cases/zero_copy/zero_copy.html
+    unsigned short width;
+    unsigned short height;
+    unsigned long long timestamp;
+
+    /*
+    如果性能是关键因素，并且可以保证图像数据的大小不变，std::array 可能会提供更好的性能。对应char image_data[3*1280*1024];
+    如果需要频繁地扩展或收缩数据，std::vector 可能更合适，尽管这可能会引入一些额外的性能开销。对应sequence<octet> image_data;
+    */
+    //sequence<octet> image_data; //等价于std::vector<uint8_t>， 可以存储整数值范围为 0 到 255 的图像数据
+    //用下面这个
+    octet image_data[3*1280*1024]; //等价于：std::array<uint8_t,3*1280*1024>，要求：图像大小固定为1280*1024
+    //char image_data[3932160];
+};
+
+
+/*
+@final
+struct LoanableHelloWorld
+{
+	unsigned long index;
+	char message[256];
+};
+*/

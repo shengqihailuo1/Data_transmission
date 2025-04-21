@@ -1,0 +1,35 @@
+        expect_serial_number: "00DA0878853" #相机序列号
+        width: 1280                         #图像宽度
+        height: 1024                        #图像高度
+        Offset_x: 0                         #X方向偏置
+        Offset_y: 0                         #Y方向偏置
+
+        GainAuto: 2                         #亮度的固定增益
+        BalanceRatio: 0                        #白平衡
+
+        # ExposureAuto： 0 代表 Off（使用固定曝光时间）, 2 代表 Continues
+        #（1）固定曝光这样设置：
+        # ExposureAuto: 0  #固定曝光模式 （要设置固定的时间）                                                                                                                                                                                                                                                                                                                                                                                                                    
+        # ExposureTime: 100000 # 固定曝光时间 单位：us
+        #（2）自动连续曝光这样设置：
+        # ExposureAuto: 2 #自动连续曝光模式(要求设置最高最低时间)
+        # AutoExposureTimeLower: 100
+        # AutoExposureTimeUpper: 20000 
+
+        ExposureAuto: 0
+        ExposureTime: 20000
+        AutoExposureTimeLower: 100
+        AutoExposureTimeUpper: 20000 
+
+        FrameRateEnable: true                   #使能帧率
+        FrameRate: 210                          #设置帧率
+
+        GammaEnable: false                       #使能伽马因子
+        Gamma: 0.7                              #设置伽马因子
+
+        SaturationEnable: true                 #使能饱和度
+        Saturation: 128                         #设置饱和度
+
+        TriggerMode: 0                          #触发模式。 0表示软触发模式。1表示硬触发模式。
+        TriggerSource: 0
+        LineSelector: 0
